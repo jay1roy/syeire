@@ -1,4 +1,4 @@
-# static/admin/config.yml
+# admin/config.yml
 #backend:
 #  name: git-gateway
 #  branch: main
@@ -8,7 +8,7 @@ backend:
   repo: jay1roy/syeire
   branch: main
   auth_scope: repo
-  base_url: https://https://syeire1.pages.dev/
+  base_url: https://syeire1.pages.dev/
   auth_endpoint: api/auth
   
 media_folder: "images/uploads" # where images are saved
