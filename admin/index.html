@@ -4,5 +4,32 @@
     <meta charset="utf-8" />
     <title>SY Eire Content Manager</title>
   </head>
-  <body><script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script></body>
+  <body>
+    <!-- Load Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      DecapCMS.init({
+        backend: {
+          name: 'github',
+          repo: 'jay1roy/syeire',   // Your GitHub repo name
+          branch: 'main',           // Branch (usually 'main')
+        },
+        media_folder: "uploads",
+        public_folder: "/uploads",
+        collections: [
+          {
+            name: "pages",             // The name of the collection
+            label: "Pages",            // Label displayed in the CMS
+            folder: "content/pages",   // The folder where pages are stored
+            create: true,              // Enable creation of new pages
+            slug: "{{slug}}",          // Slug generation for pages
+            fields: [
+              { label: "Title", name: "title", widget: "string" },  // Title field
+              { label: "Body", name: "body", widget: "markdown" },  // Markdown body field
+            ]
+          }
+        ]
+      });
+    </script>
+  </body>
 </html>
