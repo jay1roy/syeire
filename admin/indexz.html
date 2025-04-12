@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SY Decap CMS</title>
+  <title>CMS</title>
+  <!-- Load Decap CMS from CDN -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
+  <!-- Add a div where CMS will mount -->
+  <div id="nc-root"></div>
+  
+  <!-- Initialize CMS after DOM loads -->
   <script>
-    Cms.init({
-      config: {
-        backend: {
-          auth_scope: "repo", // Required for GitHub access
+    document.addEventListener('DOMContentLoaded', function() {
+      CMS.init({
+        config: {
+          backend: {
+            name: "github",
+            repo: "jay1roy/syeire", // Your GitHub repo
+            branch: "main", // Your default branch
+            auth_scope: "repo", // Required for GitHub OAuth
+          },
         },
-      },
+      });
     });
   </script>
 </body>
