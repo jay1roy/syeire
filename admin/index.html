@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>1SY Eire Content Manager</title>
+    <title>2SY Eire Content Manager</title>
   </head>
   <body>
     <!-- Load Decap CMS -->
@@ -10,22 +10,25 @@
     <script>
       DecapCMS.init({
         backend: {
-          name: 'github',
-          repo: 'jay1roy/syeire',   // Your GitHub repo name
-          branch: 'main',           // Branch (usually 'main')
+          name: 'github',          // GitHub as the backend provider
+          repo: 'jay1roy/syeire',  // Your GitHub repository name
+          branch: 'main',          // GitHub branch to use
+          // Optional: add GitHub authentication settings:
+          auth_scope: 'repo',      // Limit the access to the repo scope
+          login: true              // Enable GitHub login
         },
-        media_folder: "uploads",
-        public_folder: "/uploads",
+        media_folder: "uploads",        // Folder for media files
+        public_folder: "/uploads",     // Publicly accessible folder for media
         collections: [
           {
-            name: "pages",             // The name of the collection
-            label: "Pages",            // Label displayed in the CMS
-            folder: "content/pages",   // The folder where pages are stored
-            create: true,              // Enable creation of new pages
-            slug: "{{slug}}",          // Slug generation for pages
+            name: "pages",                // Name of the collection
+            label: "Pages",               // Label displayed in the CMS
+            folder: "content/pages",      // The folder where pages are stored
+            create: true,                 // Enable page creation in CMS
+            slug: "{{slug}}",             // Slug generation for the pages
             fields: [
               { label: "Title", name: "title", widget: "string" },  // Title field
-              { label: "Body", name: "body", widget: "markdown" },  // Markdown body field
+              { label: "Body", name: "body", widget: "markdown" },  // Body field (Markdown)
             ]
           }
         ]
