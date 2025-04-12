@@ -3,7 +3,7 @@ backend:
   repo: jay1roy/syeire  # Your GitHub repo
   branch: main  # Your default branch
   auth_type: implicit  # Required for GitHub OAuth
-  site_domain: syeire1.pages.dev  # Your Cloudflare Pages domain
+  site_domain: 91fe7f63-7f6b-45a6-bb7a-10d8eb961a52 #syeire1.pages.dev  # Your Cloudflare Pages domain
 
 media_folder: "static/uploads"  # Where images will be stored
 public_folder: "/uploads"  # Public path for images
