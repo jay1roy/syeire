@@ -1,26 +1,17 @@
-# admin/config.yml
-#backend:
-#  name: git-gateway
-#  branch: main
-
 backend:
   name: github
-  repo: jay1roy/syeire
+  repo: jay1roy/syeire # This should be your actual GitHub repo name
   branch: main
-  auth_scope: repo
-  base_url: https://syeire1.pages.dev/
-  auth_endpoint: api/auth
-  
-media_folder: "images/uploads" # where images are saved
-public_folder: "/images/uploads"
+
+media_folder: "uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "pages"
     label: "Pages"
-    folder: "content/pages"
+    folder: "content/pages"  # This should match your actual file location for content (or change to a working folder)
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      
