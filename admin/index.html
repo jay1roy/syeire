@@ -5,7 +5,7 @@
     <title>SY Eire CMS</title>
     <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js">
-      DecapCms.init({
+     /* DecapCms.init({
         backend: {
           name: 'github',          // GitHub as the backend provider
           repo: 'jay1roy/syeire',  // Your GitHub repository name
@@ -29,7 +29,14 @@
             ]
           }
         ]
-      });
+      });*/
+      Cms.init({
+      config: {
+        backend: {
+          auth_scope: "repo", // Required for GitHub access
+        },
+      },
+    });
     </script>
     </head>
   <body></body>
